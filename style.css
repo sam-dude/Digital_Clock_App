@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Agency FB';
+    background-color: rgb(243, 243, 243);
+}
+#header {
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+}
+#header ul {
+    display: flex;
+    list-style: none;
+    padding-top: 2%; padding-bottom: 2%;
+    overflow-x: scroll;
+    font-size: 20px;
+    margin-top: 12px;
+    scroll-snap-type: x mandatory;
+}
+
+#header ul::-webkit-scrollbar{
+    display: none;
+}
+
+#header ul li {
+    margin: 0 3%;
+    padding: 8px 18px;
+    scroll-snap-align: center;
+    transition: ease-in-out .5s;
+    font-weight: 100;
+}
+
+#header ul li:hover {
+    cursor: pointer;
+}
+
+#header ul li.active {
+    background-color: rgb(224, 224, 224);
+    border-radius: 20px;
+    scroll-snap-align: center;
+    font-weight: 600;
+    transition: ease-in .5s;
+}
+#header i{
+    padding: 10px 12px;
+    display: flex;
+    justify-content: right;
+    
+}
+
+/* clock space */
+#clock-space {
+    padding: 4% 3%;
+}
+.clock-display {
+    display: flex;
+    margin-top: 8%;
+    justify-content: center;
+    justify-items: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+.clock-display span {
+    padding: 0 1px;
+}
+
+/* alarm space */
+#alarm-space {
+    display: none;
+}
+
+/* style for larger screen */
+ @media (min-width: 768px) {
+     #header{
+         height: 100%;
+         
+         width: 15%;
+         position: absolute;
+         display: flex;
+         justify-content: center;
+     }
+     #header ul {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         font-size: 26px;
+         font-weight: 100;
+         scroll-snap-type: none;
+     }
+     #header ul li {
+         padding: 12px 12px;
+         margin: 0;
+     }
+     #header ul li:hover {
+         cursor: pointer;
+         transform: translateX(5px);
+     }
+ }
