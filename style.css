@@ -10,8 +10,9 @@ body {
     background-color: rgb(243, 243, 243);
 }
 #header {
-    width: 100%;
+    width: 90vw;
     background-color: rgb(243, 243, 243);
+    margin: 0 auto;
 }
 #header ul {
     display: flex;
@@ -29,7 +30,7 @@ body {
 
 #header ul li {
     margin: 0 3%;
-    padding: 8px 18px;
+    padding: 8px 5%;
     scroll-snap-align: center;
     transition: ease-in-out .5s;
     font-weight: 100;
@@ -71,6 +72,31 @@ body {
 
 /* alarm space */
 #alarm-space {
+    display: none;
+    margin: 0 5%;
+}
+#alarm-space .box {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    flex-wrap: wrap;
+}
+#alarm-space .box .in-box {
+    background-color: rgb(224, 224, 224);
+    width: 49%;
+    padding: 8px 6px;
+    border-radius: 5px;
+    margin-top: 2%;
+    font-size: 18px;
+}
+/* Timer space */
+#timer-space{
+    display: none;
+}
+
+/* Stop-watch */
+#stopwatch-space {
     display: none;
 }
 

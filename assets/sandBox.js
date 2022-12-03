@@ -1,9 +1,3 @@
-console.log("Hello world");
-//print function
-print = (prams) => {
-    console.log(prams)
-};
-
 //display spaces
 let clockSpace = document.getElementById('clock-space');
 let alarmSpace = document.getElementById('alarm-space');
@@ -11,7 +5,6 @@ let stopwatchSpace = document.getElementById('stopwatch-space');
 let timerSpace = document.getElementById('timer-space');
 
 var displaySpaces = [clockSpace, alarmSpace, stopwatchSpace, timerSpace];
-
 
 //buttons for display spaces
 let hClock = document.getElementById("h-clock");
@@ -21,15 +14,6 @@ let hStopwatch = document.getElementById("h-stopwatch");
 
 let headBtns = [hClock, hTimer, hAlarm, hStopwatch];
 
-// buttons and their compllement
-let displays = {
-    clockSpace: hClock,
-    hAlarm: alarmSpace,
-    stopwatchSpace: hStopwatch,
-    timerSpace: hTimer
-};
-
-print(displays.hAlarm);
 //code to show time 
 let hours = document.getElementById("hrs");
 let minutes = document.getElementById("mins");
@@ -59,32 +43,41 @@ displayTime = () => {
     second.innerHTML = ss;
     session.innerHTML = ses
 
-    setTimeout(function(){
+    setTimeout( () => {
         displayTime()
     }, 1000);
 }
-displayTime(hours, minutes, second)
-
-print(headBtns);
+displayTime(hours, minutes, second);
 
 headBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        btn.classList.add("active")
+    btn.addEventListener('click', () =>{
+        btn.classList.add('active');
 
-        let otherBtns = headBtns.filter((otherBtns) => {
+        let otherBtns = headBtns.filter((otherBtns) =>{
             return otherBtns !== btn;
         });
-        if (btn = hAlarm) {
-            print(alarmSpace)
-            alarmSpace.style.display= "block";
-            otherBtns.forEach((btn) => {
-                btn.style.display = "none"
-            })
-        };
-        print(otherBtns);
-    
-        otherBtns.forEach((btn) => {
-            btn.classList.remove("active");
+        otherBtns.forEach((btns) => {
+            btns.classList.remove('active');
         });
+
+        //#02 function to determine displayed section
+        displayedSection = (hBtn, correspondingDisplay) => {
+            if (btn == hBtn) {
+                correspondingDisplay.style.display = 'block';
+    
+                let otherDisplays = displaySpaces.filter((otherDisplays) => {
+                    return otherDisplays !== correspondingDisplay; 
+                });
+                otherDisplays.forEach((displays) => {
+                    displays.style.display = 'none';
+                });
+            };
+        };
+        //calling function #02
+        displayedSection(hClock, clockSpace);
+        displayedSection(hTimer, timerSpace);
+        displayedSection(hAlarm, alarmSpace);
+        displayedSection(hStopwatch, stopwatchSpace);
+        
     });
-}) 
+})
