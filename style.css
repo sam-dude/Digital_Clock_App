@@ -1,4 +1,8 @@
 @import url("./assets/AgencyFB-Bold/AgencyFB-Bold.ttf");
+@font-face {
+    font-family: 'AgencyFB';
+    src: url('./assets/AgencyFB-Bold/AgencyFB-Bold.ttf') format('truetype');
+}
 
 * {
     padding: 0;
@@ -17,7 +21,7 @@ body {
 #header ul {
     display: flex;
     list-style: none;
-    padding-top: 2%; padding-bottom: 2%;
+    padding-bottom: 2%;
     overflow-x: scroll;
     font-size: 20px;
     margin-top: 12px;
@@ -52,10 +56,9 @@ body {
     transition: ease-in .5s;
 }
 #header i{
-    padding: 10px 12px;
+    padding: 1% 2%;
     display: flex;
     justify-content: right;
-    
 }
 
 /* clock space */
