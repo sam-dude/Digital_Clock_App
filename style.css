@@ -109,6 +109,13 @@ body {
     color: #888;
     margin-bottom: 6px;
 }
+.time {
+    font-weight: 600;
+}
+.alarm-repeat {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
 /* Timer space */
 #timer-space{
     display: none;
