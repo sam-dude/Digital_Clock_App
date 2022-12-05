@@ -10,7 +10,7 @@ body {
     background-color: rgb(243, 243, 243);
 }
 #header {
-    width: 90vw;
+    width: 94%;
     background-color: rgb(243, 243, 243);
     margin: 0 auto;
 }
@@ -34,6 +34,10 @@ body {
     scroll-snap-align: center;
     transition: ease-in-out .5s;
     font-weight: 100;
+}
+#header ul :nth-child(1) {
+    margin: 0;
+    margin-right: 3%;
 }
 
 #header ul li:hover {
@@ -69,12 +73,18 @@ body {
 .clock-display span {
     padding: 0 1px;
 }
-
+.name {
+    color: #888;
+    margin: auto;
+    text-align: center;
+}
 /* alarm space */
 #alarm-space {
     display: none;
-    margin: 0 5%;
+    width: 90%;
+    margin: auto;
 }
+#stopwatch-space .box, 
 #alarm-space .box {
     margin: auto;
     display: flex;
@@ -82,13 +92,22 @@ body {
     gap: 1%;
     flex-wrap: wrap;
 }
+#stopwatch-space .box .in-box,
 #alarm-space .box .in-box {
-    background-color: rgb(224, 224, 224);
+    background-color: #fff;
     width: 49%;
     padding: 8px 6px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 2%;
     font-size: 18px;
+}
+#alarm-space .box .in-box {
+    width: 100%;
+}
+.alarm-title {
+    font-size: 8px;
+    color: #888;
+    margin-bottom: 6px;
 }
 /* Timer space */
 #timer-space{
@@ -98,6 +117,8 @@ body {
 /* Stop-watch */
 #stopwatch-space {
     display: none;
+    width: 90%;
+    margin: auto;
 }
 
 /* style for larger screen */
