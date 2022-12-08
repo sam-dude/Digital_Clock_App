@@ -15,10 +15,11 @@
     <div id="header">
         <i class="fa-solid fa-sliders"></i>
         <ul>
-            <li class="active" id="h-clock">Clock</li>
-            <li id="h-alarm">Alarm</li>
-            <li id="h-stopwatch">Stopwatch</li>
-            <li id="h-timer">Timer</li>
+            <li class="active" id="h-clock"><i class="fa-light fa-clock-three"></i></li>
+            <li id="h-alarm">A</li>
+            <li id="h-stopwatch">S</li>
+            <li id="h-timer">T</li>
+            <li id="h-bedtime">B</li>
         </ul>
     </div>
 
@@ -31,13 +32,22 @@
             <span>:</span>
             <span id="sec">00 </span>
             <span id="session" style="font-size:26px; font-weight: 100;">am</span>
-
         </div>
+        <div class="date">
+            <span id="day"></span>
+            <span>, </span>
+            <span id="date"></span>
+            <span>/</span>
+            <span id="month"></span>
+            <span>/</span>
+            <span id="year"></span>
+        </div>
+        <div class="foot">+</div>
     </section>
 
     <!-- Alarm space -->
     <section id="alarm-space">
-        <div class="name"></div>
+        <h5 class="heads">Alarm</h5>
         <div class="box">
             <div class="in-box">
                 <div class="alarm-title">ALARM <span class="alarm-no">1</span></div>
@@ -61,11 +71,12 @@
                 <div class="alarm-repeat">Every day</div>
             </div>
         </div>
+        <div class="foot">+</div>
     </section>
 
     <!-- Stopwatch space -->
     <section id="stopwatch-space">
-        <h2>Stop watch</h2>
+        <h5 class="heads">Stop watch</h5>
         <div class="box">
             <div class="in-box">12:00pm</div>
             <div class="in-box">12:00pm</div>
@@ -75,7 +86,12 @@
 
     <!-- timer space -->
     <section id="timer-space">
-        <h1>Timer</h1>
+        <h5 class="heads">Timer</h5>
+    </section>
+
+    <!-- bedtime space -->
+    <section id="bedtime-space">
+        <h5 class="heads">Bedtime</h5>
     </section>
     <!-- script -->
     <script src="./assets/sandBox.js"></script>

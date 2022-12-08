@@ -3,16 +3,18 @@ let clockSpace = document.getElementById('clock-space');
 let alarmSpace = document.getElementById('alarm-space');
 let stopwatchSpace = document.getElementById('stopwatch-space');
 let timerSpace = document.getElementById('timer-space');
+let bedSpace = document.getElementById('bedtime-space');
 
-var displaySpaces = [clockSpace, alarmSpace, stopwatchSpace, timerSpace];
+var displaySpaces = [clockSpace, alarmSpace, stopwatchSpace, timerSpace, bedSpace];
 
 //buttons for display spaces
 let hClock = document.getElementById("h-clock");
 let  hTimer = document.getElementById("h-timer");
 let hAlarm = document.getElementById("h-alarm");
 let hStopwatch = document.getElementById("h-stopwatch");
+let hBedtime = document.getElementById("h-bedtime");
 
-let headBtns = [hClock, hTimer, hAlarm, hStopwatch];
+let headBtns = [hClock, hTimer, hAlarm, hStopwatch, hBedtime];
 
 //code to show time 
 let hours = document.getElementById("hrs");
@@ -49,6 +51,24 @@ displayTime = () => {
 }
 displayTime(hours, minutes, second);
 
+//declaring the dates
+let realDate = document.getElementById('date');
+let month = document.getElementById('month');
+let year = document.getElementById('year');
+let weDay = document.getElementById('day');
+
+//function to display date
+let date = new Date();
+let day = date.getDay();
+let mnt = date.getMonth();
+let yr = date.getFullYear();
+let weekDay = date.getUTCDay();
+
+year.innerHTML = yr;
+month.innerHTML = mnt;
+realDate.innerHTML = day;
+weDay.innerHTML = weekDay;
+
 headBtns.forEach((btn) => {
     btn.addEventListener('click', () =>{
         btn.classList.add('active');
@@ -78,6 +98,6 @@ headBtns.forEach((btn) => {
         displayedSection(hTimer, timerSpace);
         displayedSection(hAlarm, alarmSpace);
         displayedSection(hStopwatch, stopwatchSpace);
-        
+        displayedSection(hBedtime, bedSpace);        
     });
-})
+});

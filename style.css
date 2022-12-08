@@ -10,11 +10,11 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Agency FB';
+    font-family: 'Humanst521 BT';
     background-color: rgb(243, 243, 243);
 }
 #header {
-    width: 94%;
+    width: 96%;
     background-color: rgb(243, 243, 243);
     margin: 0 auto;
 }
@@ -33,15 +33,12 @@ body {
 }
 
 #header ul li {
-    margin: 0 3%;
+    margin-top: 3px;
+    margin: auto;
     padding: 8px 5%;
     scroll-snap-align: center;
     transition: ease-in-out .5s;
     font-weight: 100;
-}
-#header ul :nth-child(1) {
-    margin: 0;
-    margin-right: 3%;
 }
 
 #header ul li:hover {
@@ -53,7 +50,6 @@ body {
     border-radius: 20px;
     scroll-snap-align: center;
     font-weight: 600;
-    transition: ease-in .5s;
 }
 #header i{
     padding: 1% 2%;
@@ -119,18 +115,43 @@ body {
     font-size: 12px;
     margin-bottom: 6px;
 }
+.foot {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    background-color: #00d9f8;
+    color: #fff;
+    padding: 6px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+}
+.date {
+    display: flex;
+    justify-content: center;
+}
 /* Timer space */
 #timer-space{
     display: none;
 }
-
+/* bedtime space*/
+#bedtime-space {
+    display: none;
+    width: 90%;
+    margin: auto;
+}
 /* Stop-watch */
 #stopwatch-space {
     display: none;
     width: 90%;
     margin: auto;
 }
-
+.heads {
+    text-align: center;
+    margin-bottom: 8px;
+}
 /* style for larger screen */
  @media (min-width: 768px) {
      #header{
