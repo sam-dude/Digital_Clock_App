@@ -40,6 +40,9 @@ body {
     transition: ease-in-out .5s;
     font-weight: 100;
 }
+#header ul li i {
+    color: #0e121b;
+}
 
 #header ul li:hover {
     cursor: pointer;
@@ -51,7 +54,7 @@ body {
     scroll-snap-align: center;
     font-weight: 600;
 }
-#header i{
+#header #set{
     padding: 1% 2%;
     display: flex;
     justify-content: right;
