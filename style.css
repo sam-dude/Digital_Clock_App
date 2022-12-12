@@ -104,7 +104,7 @@ body {
 }
 #stopwatch-space .box .in-box,
 #alarm-space .box .in-box {
-    background-color: #fff;
+    background-color: #6c7589;
     width: 49%;
     padding: 8px 6px;
     border-radius: 10px;
@@ -116,7 +116,7 @@ body {
 }
 .alarm-title {
     font-size: 8px;
-    color: #888;
+    color: rgb(189, 189, 189);
     margin-bottom: 6px;
 }
 .time {
