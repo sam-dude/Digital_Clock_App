@@ -16,6 +16,17 @@ let hBedtime = document.getElementById("h-bedtime");
 
 let headBtns = [hClock, hTimer, hAlarm, hStopwatch, hBedtime];
 
+//bedtime week days
+let Bmon = document.getElementById('mon');
+let Btue = document.getElementById('tue');
+let Bwed = document.getElementById('wed');
+let BThur = document.getElementById('thur');
+let Bfri = document.getElementById('fri');
+let Bsat = document.getElementById('sat');
+let Bsun = document.getElementById('sun');
+
+let Bweekdays = [Bmon, Btue, Bwed, BThur, Bfri, Bsat, Bsun];
+
 //code to show time 
 let hours = document.getElementById("hrs");
 let minutes = document.getElementById("mins");
@@ -59,15 +70,17 @@ let weDay = document.getElementById('day');
 
 //function to display date
 let date = new Date();
-let day = date.getDay();
-let mnt = date.getMonth();
+let day = String(date.getDay() + 4).padStart(2,'0');
+let mnt = String(date.getMonth()+1).padStart(2, '0');
 let yr = date.getFullYear();
-let weekDay = date.getUTCDay();
+let weekDay = date.getDay();
+let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday"];
+
 
 year.innerHTML = yr;
 month.innerHTML = mnt;
 realDate.innerHTML = day;
-weDay.innerHTML = weekDay;
+weDay.innerHTML = daysOfWeek[weekDay];
 
 headBtns.forEach((btn) => {
     btn.addEventListener('click', () =>{
@@ -100,4 +113,36 @@ headBtns.forEach((btn) => {
         displayedSection(hStopwatch, stopwatchSpace);
         displayedSection(hBedtime, bedSpace);        
     });
+});
+
+
+Bweekdays.forEach((btn) => {
+    var count = 0;
+    btn.addEventListener('click', () => {
+        count ++;
+        btn.classList.add('active');
+        if (count >= 2) {
+            btn.classList.remove('active')
+            console.log(count)
+            count = 0;
+        }
+    })
+});
+
+//code to switch bedtime toogle
+let toggleBack = document.querySelector('.onNdOff');
+let toggle = document.getElementById('toggle');
+
+var toggleCount = 0;
+toggleBack.addEventListener('click', () => {
+    toggleCount ++;
+    toggleBack.style.background = '#00d9f6';
+    toggle.style.backgroundColor = '#fff';
+    toggleBack.style.justifyContent = 'right'
+    if (toggleCount >= 2) {
+        toggleBack.style.background = '#fff';
+        toggle.style.backgroundColor = '#888';
+        toggleBack.style.justifyContent = 'left'
+        toggleCount = 0;
+    }
 });

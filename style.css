@@ -11,11 +11,11 @@
 }
 body {
     font-family: 'Humanst521 BT';
-    background-color: rgb(243, 243, 243);
+    background-color: #0e121b;
 }
 #header {
     width: 96%;
-    background-color: rgb(243, 243, 243);
+    color: #6c7589;
     margin: 0 auto;
 }
 #header ul {
@@ -24,7 +24,6 @@ body {
     padding-bottom: 2%;
     overflow-x: scroll;
     font-size: 20px;
-    margin-top: 12px;
     scroll-snap-type: x mandatory;
 }
 
@@ -48,21 +47,29 @@ body {
     cursor: pointer;
 }
 
-#header ul li.active {
-    background-color: rgb(224, 224, 224);
+#header ul li.active  {
+    text-shadow: #00d9f8 0px 60px 40px -7px;
     border-radius: 20px;
     scroll-snap-align: center;
     font-weight: 600;
+    color: #00d9f8;
 }
-#header #set{
-    padding: 1% 2%;
+#header ul li .active i {
+    text-shadow: #00d9f8 0px 60px 40px -7px;
+}
+.settings {
     display: flex;
     justify-content: right;
+    width: 95%;
 }
+.settings #set{
+    padding: 1% 2%;
+} 
 
 /* clock space */
 #clock-space {
     padding: 4% 3%;
+    color: #fff;
 }
 .clock-display {
     display: flex;
@@ -82,6 +89,7 @@ body {
 }
 /* alarm space */
 #alarm-space {
+    color: #fff;
     display: none;
     width: 90%;
     margin: auto;
@@ -120,13 +128,15 @@ body {
 }
 .foot {
     position: absolute;
-    bottom: 1rem;
+    bottom: 2rem;
     left: 50%;
     background-color: #00d9f8;
     color: #fff;
-    padding: 6px;
-    width: 2rem;
-    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     text-align: center;
     font-size: 18px;
@@ -144,7 +154,58 @@ body {
     display: none;
     width: 90%;
     margin: auto;
+    color: #fff;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    padding-left: 0;
+    padding-bottom: 1rem;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: rgba(177, 177, 177, 0.795) solid 0.5px;
+    margin-bottom: 6px;
+}
+.onNdOff {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 3rem;
+    height: 1.5rem;
+    display: flex;
+    padding: 1px;
+    justify-content: left;
+    transition: ease-in 0.5s;
+}
+#toggle {
+    background-color: #888;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    margin: auto 0;
+    transition: ease-in 0.5s;
+}
+.weekday ul {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+.weekday ul li {
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(43, 42, 42);
+    color: #6c7589;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+.weekday ul li.active {
+    background-color: #00d9f8;
+    color: #0e121b;
+} 
 /* Stop-watch */
 #stopwatch-space {
     display: none;
@@ -154,16 +215,21 @@ body {
 .heads {
     text-align: center;
     margin-bottom: 8px;
+    font-size: 18px;
+    color: #fff;
 }
 /* style for larger screen */
  @media (min-width: 768px) {
+     body {
+         display: flex;
+         justify-content: space-between;
+     }
      #header{
-         height: 100%;
-         
+         height: 100vh;
          width: 15%;
-         position: absolute;
          display: flex;
          justify-content: center;
+         
      }
      #header ul {
          display: flex;
@@ -177,9 +243,13 @@ body {
      #header ul li {
          padding: 12px 12px;
          margin: 0;
+         font-size: 28px;
      }
      #header ul li:hover {
          cursor: pointer;
          transform: translateX(5px);
+     }
+     .display-tab {
+         width: 85%;
      }
  }

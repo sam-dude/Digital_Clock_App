@@ -7,24 +7,28 @@
 
     <!-- links -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./assets/fontawesome-free-6.2.1-desktop/fontawesome-free-6.2.1-desktop/svgs/brands/">
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.2.0-web (1)/fontawesome-free-6.2.0-web/css/all.min.css">
     <script src="https://kit.fontawesome.com/55c4546d48.js" crossorigin="anonymous"></script>
+    <script src="./assets/fontawesome-free-6.2.0-web (1)/fontawesome-free-6.2.0-web/js/all.min.js"></script>
 
     <title>Digital Clock</title>
 </head>
 <body>
     <div id="header">
-        <i id="set" class="fa-solid fa-sliders"></i>
+        <div class="settings">
+            <i id="set" class="fa-solid fa-sliders"></i>
+        </div>
         <ul>
-            <li class="active" id="h-clock">C<i class="fa-light fa-clock-three"></i></li>
-            <li id="h-alarm">A</li>
-            <li id="h-stopwatch">S</li>
-            <li id="h-timer">T</li>
-            <li id="h-bedtime">B</li>
+            <li class="active" id="h-clock"><i class="fa-regular fa-clock"></i></li>
+            <li id="h-alarm"> <i class="fa-regular fa-alarm-clock"></i> </li>
+            <li id="h-stopwatch"><i class="fa-regular fa-hourglass-half"></i></li>
+            <li id="h-timer"><i class="fa-solid fa-stopwatch"></i></li>
+            <li id="h-bedtime"><i class="fa-solid fa-bed"></i></li>
         </ul>
     </div>
 
-    <!-- clock space -->
+    <div class="display-tab">
+        <!-- clock space -->
     <section id="clock-space">
         <div class="clock-display">
             <span id="hrs">00</span>
@@ -36,14 +40,14 @@
         </div>
         <div class="date">
             <span id="day"></span>
-            <span>, </span>
+            <span>,  </span>
             <span id="date"></span>
             <span>/</span>
             <span id="month"></span>
             <span>/</span>
             <span id="year"></span>
         </div>
-        <div class="foot">+</div>
+        <div class="foot"><i class="fa-solid fa-plus"></i></div>
     </section>
 
     <!-- Alarm space -->
@@ -72,7 +76,7 @@
                 <div class="alarm-repeat">Every day</div>
             </div>
         </div>
-        <div class="foot">+</div>
+        <div class="foot"><i class="fa-solid fa-plus"></i></div>
     </section>
 
     <!-- Stopwatch space -->
@@ -92,9 +96,28 @@
 
     <!-- bedtime space -->
     <section id="bedtime-space">
-        <h5 class="heads">Bedtime</h5>
+        <div class="container">
+            <div id="title">Bedtime schedule</div>
+            <div class="onNdOff">
+                <div id="toggle"></div>
+            </div>
+        </div>
+        
+        <div class="weekday">
+            <ul>
+                <li id="mon" class="">M</li>
+                <li id="tue" class="">T</li>
+                <li id="wed" class="">W</li>
+                <li id="thur" class="">T</li>
+                <li id="fri" class="">F</li>
+                <li id="sat" class="">S</li>
+                <li id="sun" class="">S</li>
+            </ul>
+        </div>
     </section>
+    </div>
     <!-- script -->
     <script src="./assets/sandBox.js"></script>
+    
 </body>
 </html>
